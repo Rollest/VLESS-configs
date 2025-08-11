@@ -9,6 +9,28 @@ dns:
   listen: 0.0.0.0:1053
   nameserver: [8.8.8.8, 1.1.1.1]
 
-proxies: []
-proxy-groups: []
-rules: []
+proxies:
+  - name: vles-reality-main
+    type: vless
+    server: 93.115.175.27
+    port: 443
+    uuid: 5a33951a-563e-4357-b6cd-c7bd3df70ffa
+    network: tcp
+    udp: true
+    tls: true
+    servername: google.com        # SNI
+    reality-opts:
+      public-key: "-7dDbs7xylbzzxRstOZBGTs83_jMptwJz8UyzwPESxI"
+      short-id: "6245b093158a097e"
+    client-fingerprint: chrome     # лучше, чем random
+    # packet-encoding у VLESS+Reality не нужен, убрал
+
+proxy-groups:
+  - name: "🚀 Proxy"
+    type: select
+    proxies:
+      - vles-reality-main
+      - DIRECT
+
+rules:
+  - MATCH, 🚀 Proxy

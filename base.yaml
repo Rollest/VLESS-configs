@@ -10,11 +10,5 @@ dns:
   nameserver: [8.8.8.8, 1.1.1.1]
 
 proxies: []
-
-proxy-groups:
-  - name: "🚀 Proxy"
-    type: select
-    proxies:
-      - DIRECT
-
+proxy-groups: []
 rules: []

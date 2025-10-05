@@ -8,5 +8,8 @@ dns:
   enable: true
   listen: 0.0.0.0:1053
   nameserver: [8.8.8.8, 1.1.1.1]
+  fake-ip-filter:
+    - "vpn3.consultant.ru"
+    - "+.consultant.ru"
 
 # Нет proxies, proxy-groups и rules — они добавятся из подписки и my.ini
